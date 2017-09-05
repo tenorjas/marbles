@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace marbles.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class MarblesController : Controller
     {
         // GET api/values
         [HttpGet]
