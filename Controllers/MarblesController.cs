@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using marbles.Models;
 
 namespace marbles.Controllers
 {
@@ -11,9 +12,12 @@ namespace marbles.Controllers
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public string Get()
         {
-            return new string[] { "value1", "value2" };
+            var marble = new MarblesModel();
+            Random rnd = new Random();
+            int marbleColorIndex = rnd.Next(0,marble.colors.Count());
+            return $"color: {marble.colors[marbleColorIndex]}";
         }
 
         // GET api/values/5
