@@ -1,0 +1,12 @@
+@model marbles.Models.MarblesModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<br>
+<br>
+<p>Enter a new color marble to put into the marble bag:</p>
+<form asp-controller="Marbles" asp-action="Post">
+    <input type="text" name="newMarbleColor" placeholder="New color">
+    <button type="submit">Submit</button>
+</form>

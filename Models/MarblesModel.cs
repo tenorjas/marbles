@@ -12,6 +12,6 @@ namespace marbles.Models
 
         }
 
-        public string[] colors = {"red","orange","yellow","green","blue","indigo","violet","black","white","silver","aqua"};
+        public List<string> colors = new List<string>(){"red","orange","yellow","green","blue","indigo","violet","black","white","silver","aqua"};
     }
 }

@@ -10,6 +10,12 @@ namespace marbles.Controllers
     [Route("api/[controller]")]
     public class MarblesController : Controller
     {
+        [Route("/")]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         // GET api/values
         [HttpGet]
         public string Get()
@@ -29,8 +35,12 @@ namespace marbles.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public List<string> Post([FromForm]string newMarbleColor)
         {
+            var marble = new MarblesModel();
+            var colors = marble.colors;
+            colors.Add(newMarbleColor);
+            return colors;
         }
 
         // PUT api/values/5
